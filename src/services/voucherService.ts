@@ -35,8 +35,8 @@ async function applyVoucher(code: string, amount: number) {
     amount,
     discount: voucher.discount,
     finalAmount,
-    applied: finalAmount !== amount
-  }
+    applied: finalAmount !== amount,
+  };
 }
 
 async function changeVoucherToUsed(code: string) {
@@ -48,10 +48,10 @@ function isAmountValidForDiscount(amount: number) {
 }
 
 function applyDiscount(value: number, discount: number) {
-  return value - (value * (discount / 100));
+  return value - value * (discount / 100);
 }
 
 export default {
   createVoucher,
-  applyVoucher
-}
+  applyVoucher,
+};
